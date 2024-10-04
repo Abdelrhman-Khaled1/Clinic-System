@@ -1,0 +1,16 @@
+2024-10-04 17:26:24.631715+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]* from patients"; expected "identifier"; SQL statement:
+delete * from patients [42001-224]
+2024-10-04 17:26:43.252932+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]*  from patients"; expected "identifier"; SQL statement:
+delete *  from patients [42001-224]
+2024-10-04 17:26:54.469263+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*](id,name,age)  from patients"; expected "identifier"; SQL statement:
+delete (id,name,age)  from patients [42001-224]
+2024-10-04 17:27:03.995355+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ID" not found; SQL statement:
+delete id,name,age from patients [42102-224]
+2024-10-04 17:27:09.044612+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM PATIENTS \000d\000adelete [*]id,name,age from patients"; SQL statement:
+SELECT * FROM PATIENTS 
+delete id,name,age from patients [42000-224]
