@@ -6,6 +6,8 @@ import com.microservices.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
@@ -21,6 +23,11 @@ public class PaymentController {
     @PostMapping("/add-payment")
     public PaymentDto addPayment(@RequestBody AddPaymentDto dto){
         return paymentService.addPayment(dto);
+    }
+
+    @GetMapping("/get-patient-payments")
+    public List<PaymentDto> getPatientPayments(@RequestHeader Long patientId){
+        return paymentService.getPatientPayments(patientId);
     }
 
 }
