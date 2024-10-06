@@ -1,22 +1,35 @@
 package com.microservices.doctor.controller;
 
+import com.microservices.doctor.model.dto.AddPatientDto;
+import com.microservices.doctor.model.dto.PatientDto;
+import com.microservices.doctor.model.dto.UpdatePatientDto;
 import com.microservices.doctor.service.DoctorPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/doctor")
 public class DoctorPatientController {
     @Autowired
     private DoctorPatientService patientService;
 
-    @GetMapping("/doctor/get-patient/{name}")
-    public String getPatient(@PathVariable String name){
-        return this.patientService.getPatient(name);
+    @GetMapping("/get-patient")
+    public PatientDto getPatient(@RequestParam Long id){
+        return this.patientService.getPatient(id);
     }
-    @GetMapping("/doctor/get-patient-feign/{name}")
-    public String getPatientFeign(@PathVariable String name){
-        return this.patientService.getPatientByFeignClient(name);
+
+    @PostMapping("/add-patient")
+    public PatientDto save(@RequestBody AddPatientDto dto) {
+        return patientService.savePatient(dto);
+    }
+
+    @PutMapping("/update-patient")
+    public PatientDto update(@RequestBody UpdatePatientDto dto) {
+        return patientService.updatePatient(dto);
+    }
+
+    @DeleteMapping("/delete-patient")
+    public void delete(@RequestParam Long id) {
+        patientService.deletePatient(id);
     }
 }

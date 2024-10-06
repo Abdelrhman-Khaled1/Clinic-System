@@ -25,12 +25,12 @@ public class PatientController {
     }
 
     @DeleteMapping("/delete-patient")
-    public void update(@RequestParam Long id) {
+    public void delete(@RequestParam Long id) {
         patientService.delete(id);
     }
 
     @GetMapping("/get-patient")
-    public PatientDto save(@RequestParam Long id) {
+    public PatientDto get(@RequestParam Long id) {
         return patientService.get(id);
     }
 
