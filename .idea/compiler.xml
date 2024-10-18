@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="doctor" />
         <module name="api-gateway" />
+        <module name="eureka" />
       </profile>
       <profile name="Annotation profile for patient" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -27,6 +28,7 @@
     <bytecodeTargetLevel>
       <module name="api-gateway" target="17" />
       <module name="doctor" target="17" />
+      <module name="eureka" target="17" />
       <module name="patient" target="17" />
       <module name="payment" target="17" />
     </bytecodeTargetLevel>
@@ -35,6 +37,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="doctor" options="-parameters" />
+      <module name="eureka" options="-parameters" />
       <module name="patient" options="-parameters" />
       <module name="payment" options="-parameters" />
     </option>
