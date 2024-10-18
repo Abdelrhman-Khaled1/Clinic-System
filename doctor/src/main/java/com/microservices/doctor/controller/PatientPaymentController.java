@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/patient/payment")
+@RequestMapping("/payment") //context-path: /doctor
 public class PatientPaymentController {
     @Autowired
     private PatientPaymentService paymentService;

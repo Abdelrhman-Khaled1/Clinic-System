@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/doctor")
+//context-path: /doctor
 public class DoctorPatientController {
     @Autowired
     private DoctorPatientService patientService;

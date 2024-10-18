@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
-@FeignClient(name = "PAYMENT-SERVICE")
+
+@FeignClient(name = "PAYMENT-SERVICE", path = "/payment")
 public interface PaymentProxy {
-    @GetMapping("/payment/get-patient-payments")
+    @GetMapping("/get-patient-payments")
     public List<PaymentDto> getPatientPayments(@RequestHeader Long patientId);
 }

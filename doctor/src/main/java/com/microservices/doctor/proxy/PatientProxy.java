@@ -6,7 +6,7 @@ import com.microservices.doctor.model.dto.UpdatePatientDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "PATIENT-SERVICE")
+@FeignClient(name = "PATIENT-SERVICE", path = "/patient")
 public interface PatientProxy {
 
     @PostMapping("/add-patient")

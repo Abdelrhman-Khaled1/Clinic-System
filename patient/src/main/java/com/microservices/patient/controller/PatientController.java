@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
-public class PatientController {
+public class PatientController {//context-path: /patient
     @Autowired
     private PatientService patientService;
     @Autowired

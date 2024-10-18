@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "PAYMENT-SERVICE")
+@FeignClient(name = "PAYMENT-SERVICE", path = "/payment")
 public interface PaymentProxy {
-    @GetMapping("/payment/payment-by-tran-id")
+    @GetMapping("/payment-by-tran-id")
     public PaymentDto getPaymentByTranId(@RequestParam String tranId);
 
-    @PostMapping("/payment/add-payment")
+    @PostMapping("/add-payment")
     public PaymentDto addPayment(@RequestBody AddPaymentDto dto);
 
 }

@@ -1,5 +1,9 @@
 server:
   port: 3000
+
+  servlet:
+    context-path: /payment
+
 spring:
   application:
     name: PAYMENT-SERVICE
