@@ -4,6 +4,20 @@ spring:
   application:
     name: EUREKA-SERVER
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+
+
 eureka:
   client:
     register-with-eureka: false

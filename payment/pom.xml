@@ -30,6 +30,7 @@
 		<java.version>17</java.version>
 		<org.projectlombok.version>1.18.34</org.projectlombok.version>
 		<org.mapstruct.version>1.6.0</org.mapstruct.version>
+		<spring-boot-admin.version>3.3.5</spring-boot-admin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -88,6 +89,12 @@
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>${spring-boot-admin.version}</version>
 		</dependency>
 
 	</dependencies>

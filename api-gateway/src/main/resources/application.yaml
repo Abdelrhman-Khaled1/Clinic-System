@@ -4,6 +4,20 @@ spring:
   application:
     name: API-GATEWAY
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+
+
   cloud:
     gateway:
       discovery:
