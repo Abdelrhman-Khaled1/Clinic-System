@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="doctor" />
         <module name="api-gateway" />
+        <module name="adminserver" />
         <module name="eureka" />
       </profile>
       <profile name="Annotation profile for patient" enabled="true">
@@ -26,6 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="adminserver" target="17" />
       <module name="api-gateway" target="17" />
       <module name="doctor" target="17" />
       <module name="eureka" target="17" />
@@ -35,6 +37,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="adminserver" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="doctor" options="-parameters" />
       <module name="eureka" options="-parameters" />
