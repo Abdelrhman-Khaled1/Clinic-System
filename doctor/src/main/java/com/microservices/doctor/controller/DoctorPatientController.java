@@ -4,6 +4,7 @@ import com.microservices.doctor.model.dto.AddPatientDto;
 import com.microservices.doctor.model.dto.PatientDto;
 import com.microservices.doctor.model.dto.UpdatePatientDto;
 import com.microservices.doctor.service.DoctorPatientService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ public class DoctorPatientController {
     @Autowired
     private DoctorPatientService patientService;
 
+    @CircuitBreaker(name = "getPatientInstance",fallbackMethod = "getDefaultPatient")
     @GetMapping("/get-patient")
     public PatientDto getPatient(@RequestParam Long id){
         return this.patientService.getPatient(id);
@@ -31,5 +33,13 @@ public class DoctorPatientController {
     @DeleteMapping("/delete-patient")
     public void delete(@RequestParam Long id) {
         patientService.deletePatient(id);
+    }
+
+    public PatientDto getDefaultPatient(Exception e){
+        return PatientDto.builder()
+                .patientName("UNKNOWN-PATIENT")
+                .id(0L)
+                .patientAge(0)
+                .build();
     }
 }

@@ -12,14 +12,35 @@ spring:
         url: http://localhost:8888
 
 management:
+  health:
+    show-details: always
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  ### Spring boot admin
   endpoints:
     web:
       exposure:
         include: "*"
-  health:
-    show-details: always
+  ### /Spring boot admin
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      getPatientInstance:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 2
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
