@@ -40,4 +40,4 @@ eureka:
 
 logging:
   file:
-    name: E:\ELK\logs\doctor-service.log
+    name: E:\ELK\logs\patient-service.log
