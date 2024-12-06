@@ -26,6 +26,7 @@
 		<tag/>
 		<url/>
 	</scm>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>17</java.version>
 		<org.projectlombok.version>1.18.34</org.projectlombok.version>
@@ -120,7 +121,6 @@
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<version>${org.projectlombok.version}</version>
 						</exclude>
 					</excludes>
 				</configuration>

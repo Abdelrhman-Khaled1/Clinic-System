@@ -1,0 +1,39 @@
+server:
+  port: 9000
+
+  servlet:
+    context-path: /patient
+spring:
+  application:
+    name: PATIENT-SERVICE
+  datasource:
+    url: jdbc:h2:file:./database/patient_db
+    driverClassName: org.h2.Driver
+    username: root
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
+  boot:
+    admin:
+      client:
+        url: http://host.docker.internal:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://host.docker.internal:8761/eureka/
