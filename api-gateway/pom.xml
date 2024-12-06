@@ -30,6 +30,7 @@
 		<java.version>17</java.version>
 		<spring-boot-admin.version>3.3.5</spring-boot-admin.version>
 	</properties>
+	<packaging>jar</packaging>
 	<dependencies>
 
 

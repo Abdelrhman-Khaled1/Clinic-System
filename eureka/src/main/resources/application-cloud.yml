@@ -1,0 +1,24 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: EUREKA-SERVER
+
+  boot:
+    admin:
+      client:
+        url: http://host.docker.internal:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

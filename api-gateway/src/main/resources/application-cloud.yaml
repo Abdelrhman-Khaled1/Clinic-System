@@ -1,12 +1,8 @@
 server:
-  port: 3000
-
-  servlet:
-    context-path: /payment
-
+  port: 7777
 spring:
   application:
-    name: PAYMENT-SERVICE
+    name: API-GATEWAY
 
   boot:
     admin:
@@ -22,19 +18,15 @@ management:
     show-details: always
 
 
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enable: true
+          lower-case-service-id: true
 
-  datasource:
-    url: jdbc:h2:file:./database/payment_db
-    driverClassName: org.h2.Driver
-    username: root
-    password:
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: update
-  h2:
-    console:
-      enabled: true
+  main:
+    web-application-type: reactive
 
 eureka:
   client:
