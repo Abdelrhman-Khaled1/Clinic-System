@@ -4,9 +4,11 @@ This project is a clinic system built using Java Spring Boot in a microservices 
 ## 🏥 Modules Overview
 1. Doctor Service
     - Manages doctor-related operations like profiles, schedules, and availability.
+    - Handles patient registration
 
 2. Patient Service
    - Handles patient registration, profiles, and medical history.
+   - Handles payments
 
 3. Payment Service
    - Mocks the payment process for clinic services.
@@ -21,13 +23,14 @@ This project is a clinic system built using Java Spring Boot in a microservices 
    - Provides system monitoring and management functionalities.
 
 ## 💡 Key Features
-* **Service Discovery**: Implemented using Eureka Server for dynamic service registration and discovery.
-* **Communication Between Services**: Achieved with OpenFeign, simplifying RESTful communication.
-* **API Gateway**: Centralized routing and request handling via Spring Cloud Gateway.
-* **Circuit Breaker**: Ensured service resilience using Resilience4j for fallback mechanisms.
-* **Monitoring**: Used Spring Boot Admin for real-time monitoring of service health and logs.
-* **Logging and Analytics**: Integrated ELK Stack (Elasticsearch, Logstash, Kibana) for effective log management and analysis.
-* **Containerization**: Dockerized all services for isolated and consistent deployments.
+* **Service Discovery**: <br/> -> Implemented using Eureka Server for dynamic service registration and discovery.
+* **Communication Between Services**: <br/> -> Achieved with OpenFeign, simplifying RESTful communication.
+* **API Gateway**: <br/> -> Centralized routing and request handling via Spring Cloud Gateway.
+* **Circuit Breaker**: <br/> -> Ensured service resilience using Resilience4j for fallback mechanisms.
+* **Monitoring**: <br/> -> Used Spring Boot Admin for real-time monitoring of service health and logs.
+* **Logging and Analytics**: <br/> -> Integrated ELK Stack (Elasticsearch, Logstash, Kibana) for effective log management and analysis.
+* **Containerization**: <br/> -> Dockerized all services for isolated and consistent deployments.
+* **Kubernetes Deployment**: <br/> -> Added Kubernetes (K8s) scripts for deploying and managing services efficiently.
 
 ## 🛠️ Tech Stack
 * Java
@@ -36,15 +39,13 @@ This project is a clinic system built using Java Spring Boot in a microservices 
 * Docker
 * Resilience4j
 * Elasticsearch, Logstash, Kibana (ELK Stack)
-
-
-## 🚀 Next Steps
-
-* Kubernetes (K8s): Plan to integrate the project with Kubernetes for orchestration and scaling.
-
+* Kubernetes 
 
 ## Access the services:
 * Eureka Dashboard: ``` http://localhost:8761 ```
-* API Gateway: ``` http://localhost:8080 ```
-* Spring Boot Admin: ``` http://localhost:8081 ```
+* API Gateway: ``` http://localhost:7777 ```
+* Spring Boot Admin: ``` http://localhost:8888 ```
 * Kibana Dashboard: ``` http://localhost:5601 ```
+
+## Testing on postman
+[Clinic System Using API Gateway.postman_collection.json](https://github.com/user-attachments/files/18049740/Clinic.System.Using.API.Gateway.postman_collection.json)
