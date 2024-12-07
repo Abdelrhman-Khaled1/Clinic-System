@@ -47,5 +47,9 @@ This project is a clinic system built using Java Spring Boot in a microservices 
 * Spring Boot Admin: ``` http://localhost:8888 ```
 * Kibana Dashboard: ``` http://localhost:5601 ```
 
+## Check out the diagram below to see the workflow of a request: Client → Doctor Service → Patient Service.
+![Clinic System PNG](https://github.com/user-attachments/assets/3b7af705-9061-4600-8eb5-25a780fc66d0)
+
+
 ## Testing on postman
 [Clinic System Using API Gateway.postman_collection.json](https://github.com/user-attachments/files/18049740/Clinic.System.Using.API.Gateway.postman_collection.json)
